@@ -1,0 +1,7 @@
+npm init
+npm install angular@latest --save
+npm install express --save
+npm install http-server --save
+npm install bootstrap --save
+npm install mysql --save
+npm install angular-route --save
