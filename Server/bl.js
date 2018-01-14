@@ -32,12 +32,28 @@ function read( tblName, readCallback )
 
 }
 
+// Generic create 
+function create( tblName, sqlQuery, createCallback )
+{       
+    // run the query
+    dal.runSqlQuery(sqlQuery, function(err, rows) 
+    {
+        // if an error returned send it to the callback
+        if (err) 
+        {
+            createCallback(err);
+            return;
+        }
 
+        // suucceed. 
+        createCallback(null);
+    });
 
+}
 
 
 module.exports.CRUD = {
-    // create: create,
+    create: create,
     read: read/*,
     update: update,
     delete: delete*/
